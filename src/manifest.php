@@ -2,7 +2,7 @@
 
 $manifest = array(
     'name' => 'Mailrelay',
-    'description' => 'Easily sync your SugarCRM users and contacts with Mailrelay.',
+    'description' => 'Easily sync your SugarCRM users with Mailrelay.',
     'version' => '1.0',
     'author' => 'CPC',
     'readme' => 'README',
@@ -41,10 +41,6 @@ $installdefs['copy'] = array(
     array(
         'from' => '<basepath>/SugarModules/modules/Configurator/connectionSettings.tpl',
         'to' => 'custom/modules/Configurator/connectionSettings.tpl',
-    ),
-    array(
-        'from' => '<basepath>/SugarModules/modules/Users/logic_hooks.php',
-        'to' => 'custom/modules/Users/logic_hooks.php',
     )
 );
 
@@ -61,14 +57,18 @@ $installdefs['language'] = array(
     )
 );
 
-/*$installdefs['logic_hooks'] = array(
+$installdefs['logic_hooks'] = array(
     array(
-        'module' => '',
-        'hook' => 'after_ui_footer',
+        'module' => 'Users',
         'order' => 1,
-        'description' => 'after_ui_footer insert All-In-One-CTI js',
-        'file' => 'include/AllInOneCTI/HookClass.php',
-        'class' => 'AllInOneCTI_HookCLass',
-        'function' => 'echoJS',
+        'hook' => 'after_save',
+        'description' => 'Mailrelay after_save users hook',
+        'file' => 'custom/include/class.mailrelayHooks.php',
+        'class' => 'MailrelayHooks',
+        'function' => 'afterSaveUser',
     ),
-);*/
+);
+
+$installdefs['post_uninstall'] = array(
+    '<basepath>/scripts/post_uninstall.php',
+);

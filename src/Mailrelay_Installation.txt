@@ -1,0 +1,78 @@
+---------------------------------------------------------------
+------ Installation of MailRelay plugin SugarCRM -------
+---------------------------------------------------------------
+
+The installation of the MailRelay plugin for SugarCRM is really simple. You only need to follow few steps to have it installed.
+
+After installing the extension, inside Administration options there is a new category,  in these options you can configure and synchronize all your SugCRM users with your MailRelay account.
+
+This will saved you time to synchronize and organize your users in groups.
+
+Let's start with the installation process:
+
+
+-----------------------
+First mandatory step
+-----------------------
+
+The first step, in order to use the extension, is enable the API key from our MailRelay account. To do this, we need to get into the control panel of our MailRelay account. Then, we have to go to configuration menu, and "Access API". Inside this screen, you have to click on " Generate new API key".
+
+It isnot necessary to write the key, once generated, the extension can be used with the user and password information.
+
+----------------------------------------
+Upload the neessary files to the server
+----------------------------------------
+
+The MailRelay pugin comes in a .zip file. To upload it, go to "Module Loader" optin inside Administration options. A textbox of file type will display, in there you can upload the .zip file. The plugon will br uploaded to th System, however this won't be installed yet.
+
+--------------------------------------------------
+Installation from the SugarCRM cntrol panel
+--------------------------------------------------
+
+Once all files were uploaded, we need to follow some adittional steps in order to finish the installation
+
+- Click on  "Install" button.
+- on the next window, click on "Commit" button.
+
+This will finish the installation process.
+
+-------------------------
+Configuring the extension
+-------------------------
+
+Once the extension has been installed, we will have a new category inside Administration options. So go to "Connection Settings".
+By clicking on this optin, tis will lead us to a new form where youj have to fill the following information:
+
+- Host (this can be fond in your MailRelay welcome email). Please take into account tah the host must be introduced without the http://
+- API key (the API kry generated from our MailRelay account).
+- Autosync (if you want to use the automatic synchronization when a user is edited or created in SugarCRM)
+- Groups to sync (if the Host and the API key are valide and the Autosync option are enabled, it can be select the groups which yo want to do the automatic synchronization)
+
+One the data is saved, we can start de users synchronization.
+
+--------------------------
+Users synchronization
+--------------------------
+
+After the configuration, go to "Sync Users" optin where we can select groups from our MailRelay account which will be synchronized with the SugarCRM account. Select the one we need and then click on the "Start Sync" option.
+
+We wil see the next window, which will show the synchronization process. Finally, it will show rhe total useres synchronized.
+
+[ NOTE: Depending on the numbr of users synchronized, the process may take  some seconds or minutes. ]
+
+--------------------------
+Uninstalling the extension
+--------------------------
+
+Uninstalling the extension is as easy as its installation. You just have to go to "Module Loader", look for the MailRelay module and click on "Uninstall". In the next screen click on "commit" button. By selecting this option, the extension will be uninstalled.
+
+----------------
+Additional notes
+----------------
+- This extension has been tested using Prestashop 1.5.4.0
+
+- This software is provided by the copyright holders and contributors "AS IS" and any express or implied warranties, including, but not limited to,
+the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the copyright owner or contributors be liable for any direct,
+indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data or profits,
+or bussiness interruption) however caused and on any theory of liability, wether in contract, strict liability, or tort (including negligence or otherwise) arising in any
+way out of the use of this software, even if advised of the possibility of such damage.
