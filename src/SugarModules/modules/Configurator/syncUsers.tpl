@@ -1,3 +1,6 @@
+<style type="text/css">
+#bottomLinks{ldelim}display:none;{rdelim}
+</style>
 <form id="MailrelaySettingsForm" name="MailrelaySettingsForm" method="POST" action="index.php">
 <input type="hidden" name="module" value="Configurator">
 <input type="hidden" name="action" value="syncUsers">
@@ -20,16 +23,58 @@
     <td width="100%">
         <table id="connectionSettingsTable" width="100%" border="0" cellspacing="0" cellpadding="0" class="tabForm">
         <tr>
-            <td align="left" class="dataLabel" width="10%" nowrap="nowrap">{$MOD.LBL_MAILRELAY_GROUPSTOSYNC}</td>
+            <td align="left" class="dataLabel" width="10%" nowrap="nowrap" valign="top">{$MOD.LBL_MAILRELAY_GROUPSTOSYNC_USERS}</td>
             <td align="left" class="dataField" width="20%" nowrap="nowrap">
-                <select id="groups" name="groups[]" multiple="multiple" size="{$groups|@count}">
+                <select id="groups_users" name="groups_users[]" multiple="multiple" size="{$groups|@count}">
                 {foreach key=key item=item from=$groups}
-                <option value="{$item.id}" {if $item.id|in_array:$settings.groups}selected="selected"{/if}>{$item.name}</option>
+                <option value="{$item.id}" {if $item.id|in_array:$settings.groups_users}selected="selected"{/if}>{$item.name}</option>
                 {/foreach}
                 </select>
             </td>
             <td align="left" class="dataLabel" style="font-size: smaller;">
-                <span id="groups_error" class="error" style="display:none;"></span>
+                <span id="groups_users_error" class="error" style="display:none;"></span>
+            </td>
+        </tr>
+        <tr style="height:15px;"><td></td><td></td></tr>
+        <tr>
+            <td align="left" class="dataLabel" width="10%" nowrap="nowrap" valign="top">{$MOD.LBL_MAILRELAY_GROUPSTOSYNC_LEADS}</td>
+            <td align="left" class="dataField" width="20%" nowrap="nowrap">
+                <select id="groups_leads" name="groups_leads[]" multiple="multiple" size="{$groups|@count}">
+                {foreach key=key item=item from=$groups}
+                <option value="{$item.id}" {if $item.id|in_array:$settings.groups_leads}selected="selected"{/if}>{$item.name}</option>
+                {/foreach}
+                </select>
+            </td>
+            <td align="left" class="dataLabel" style="font-size: smaller;">
+                <span id="groups_leads_error" class="error" style="display:none;"></span>
+            </td>
+        </tr>
+        <tr style="height:15px;"><td></td><td></td></tr>
+        <tr>
+            <td align="left" class="dataLabel" width="10%" nowrap="nowrap" valign="top">{$MOD.LBL_MAILRELAY_GROUPSTOSYNC_ACCOUNTS}</td>
+            <td align="left" class="dataField" width="20%" nowrap="nowrap">
+                <select id="groups_accounts" name="groups_accounts[]" multiple="multiple" size="{$groups|@count}">
+                {foreach key=key item=item from=$groups}
+                <option value="{$item.id}" {if $item.id|in_array:$settings.groups_accounts}selected="selected"{/if}>{$item.name}</option>
+                {/foreach}
+                </select>
+            </td>
+            <td align="left" class="dataLabel" style="font-size: smaller;">
+                <span id="groups_accounts_error" class="error" style="display:none;"></span>
+            </td>
+        </tr>
+        <tr style="height:15px;"><td></td><td></td></tr>
+        <tr>
+            <td align="left" class="dataLabel" width="10%" nowrap="nowrap" valign="top">{$MOD.LBL_MAILRELAY_GROUPSTOSYNC_CONTACTS}</td>
+            <td align="left" class="dataField" width="20%" nowrap="nowrap">
+                <select id="groups_contacts" name="groups_contacts[]" multiple="multiple" size="{$groups|@count}">
+                {foreach key=key item=item from=$groups}
+                <option value="{$item.id}" {if $item.id|in_array:$settings.groups_contacts}selected="selected"{/if}>{$item.name}</option>
+                {/foreach}
+                </select>
+            </td>
+            <td align="left" class="dataLabel" style="font-size: smaller;">
+                <span id="groups_contacts_error" class="error" style="display:none;"></span>
             </td>
         </tr>
         </table>
@@ -44,9 +89,14 @@
 <!-- {$JAVASCRIPT} -->
 <script type="text/javascript">
     $('#MailrelaySettingsForm').submit(function(){ldelim}
-        var required_fields = [
-            'groups'
-        ];
+        var required_fields = [];
+
+        if (this.elements['groups_users'].value == '' &&
+            this.elements['groups_leads'].value == '' &&
+            this.elements['groups_accounts'].value == '' &&
+            this.elements['groups_contacts'].value == '') {ldelim}
+            required_fields = ['groups_users', 'groups_leads', 'groups_accounts', 'groups_contacts'];
+        {rdelim}
 
         var checked = true;
         var blink = function(field, color, source_color, step, step_number) {ldelim}

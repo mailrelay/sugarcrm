@@ -2,7 +2,7 @@
 
 $manifest = array(
     'name' => 'Mailrelay',
-    'description' => 'Easily sync your SugarCRM users with Mailrelay.',
+    'description' => 'Easily sync your SugarCRM Users, Leads, Accounts and Contacts with Mailrelay.',
     'version' => '1.0',
     'author' => 'CPC',
     'readme' => 'README',
@@ -41,6 +41,14 @@ $installdefs['copy'] = array(
     array(
         'from' => '<basepath>/SugarModules/modules/Configurator/connectionSettings.tpl',
         'to' => 'custom/modules/Configurator/connectionSettings.tpl',
+    ),
+    array(
+        'from' => '<basepath>/SugarModules/modules/Configurator/syncUsers.php',
+        'to' => 'custom/modules/Configurator/syncUsers.php',
+    ),
+    array(
+        'from' => '<basepath>/SugarModules/modules/Configurator/syncUsers.tpl',
+        'to' => 'custom/modules/Configurator/syncUsers.tpl',
     )
 );
 
@@ -67,6 +75,33 @@ $installdefs['logic_hooks'] = array(
         'class' => 'MailrelayHooks',
         'function' => 'afterSaveUser',
     ),
+    array(
+        'module' => 'Leads',
+        'order' => 1,
+        'hook' => 'after_save',
+        'description' => 'Mailrelay after_save leads hook',
+        'file' => 'custom/include/class.mailrelayHooks.php',
+        'class' => 'MailrelayHooks',
+        'function' => 'afterSaveLead',
+    ),
+    array(
+        'module' => 'Accounts',
+        'order' => 1,
+        'hook' => 'after_save',
+        'description' => 'Mailrelay after_save accounts hook',
+        'file' => 'custom/include/class.mailrelayHooks.php',
+        'class' => 'MailrelayHooks',
+        'function' => 'afterSaveAccount',
+    ),
+    array(
+        'module' => 'Contacts',
+        'order' => 1,
+        'hook' => 'after_save',
+        'description' => 'Mailrelay after_save contacts hook',
+        'file' => 'custom/include/class.mailrelayHooks.php',
+        'class' => 'MailrelayHooks',
+        'function' => 'afterSaveContact',
+    )
 );
 
 $installdefs['post_uninstall'] = array(

@@ -4,7 +4,7 @@
 
 La instalación del plugin de MailRelay para SugarCRM es muy simple. Solo lleva unos pocos pasos para conseguirlo.
 
-Después de instalar la extensión aparecerá una nueva categoría en las opciones de Administración, en estas opciones podrá configurar y sincronizar todos tus usuarios SugarCRM con tu cuenta Mailrelay.
+Después de instalar la extensión aparecerá una nueva categoría en las opciones de Administración, en estas opciones podrá configurar y sincronizar todos tus Users, Leads, Accounts y Contacts de SugarCRM con tu cuenta Mailrelay.
 
 Esto te ahorrará tiempo para sincronizar y organizar tus usuarios en grupos.
 
@@ -14,8 +14,8 @@ Vamos a comenzar con el proceso de instalación:
 Primer paso obligatorio
 -----------------------
 
-El primer paso, para poder usar la extensión, es habilitar la clave API de nuestra cuenta Mailrelay. Para eso tenemos que entrar en el panel de control de
-nuestra cuenta Mailrelay. Una vez allí iremos al menú de configuración, y "Acceso API". En esa pantalla hay que pulsar en el botón de "Generar nueva clave API".
+El primer paso, para poder usar la extensión, es habilitar la clave API de nuestra cuenta Mailrelay. Para eso tenemos que entrar en el panel de control de nuestra cuenta Mailrelay. Una vez allí iremos al menú de configuración, y "Acceso API". En esa pantalla hay que pulsar en el botón de "Generar nueva clave API".
+
 No es necesario el escribir esta clave, una vez generada, la extensión podrá obtenerla usando los datos de usuario y contraseña.
 
 ----------------------------------------
@@ -44,20 +44,26 @@ Clicando en esta opción nos llevará a un formulario donde tenemos que rellenar
 
 - Host (esto puede encontrarse en tu correo de bienvenida de Mailrelay). Por favor ten en cuenta que el host tiene que introducirse sin el http:// inicial
 - API key (la clave API generada de nuestra cuenta Mailrelay).
-- Autosync (si se desea utilizar la sincronización automática cuando se crea o edita un usuario en SugarRCM)
-- Groups to sync (si el Host y el API key son válidos y la opción Autosync está habilitado se podrá seleccionar los grupos con los que se desean sincronizar automáticamente)
+- Autosync Users (si se desea utilizar la sincronización automática cuando se crea o edita un usuario en SugarRCM)
+- Groups to sync Users (si el Host y el API key son válidos y la opción Autosync Users está habilitado se podrá seleccionar los grupos con los que se desean sincronizar automáticamente)
+- Autosync Leads (si se desea utilizar la sincronización automática cuando se crea o edita un lead en SugarRCM)
+- Groups to sync Leads (si el Host y el API key son válidos y la opción Autosync Leads está habilitado se podrá seleccionar los grupos con los que se desean sincronizar automáticamente)
+- Autosync Accounts (si se desea utilizar la sincronización automática cuando se crea o edita un account en SugarRCM)
+- Groups to sync Accounts (si el Host y el API key son válidos y la opción Autosync Accounts está habilitado se podrá seleccionar los grupos con los que se desean sincronizar automáticamente)
+- Autosync Contacts (si se desea utilizar la sincronización automática cuando se crea o edita un contact en SugarRCM)
+- Groups to sync Contacts (si el Host y el API key son válidos y la opción Autosync Contacts está habilitado se podrá seleccionar los grupos con los que se desean sincronizar automáticamente)
 
-Una vez los datos se han grabado con éxito podemos iniciar la sincronización de usuarios.
+Una vez los datos se han grabado con éxito podemos iniciar la sincronización manual.
 
---------------------------
-Sincronización de usuarios
---------------------------
+---------------------
+Sincronización manual
+---------------------
 
-Después de la configuración, ingresamos a la opción "Sync Users" donde podemos seleccionar los grupos de nuestra cuenta Mailrelay que deben ser sincronizados con la cuenta SugarCRM. Seleccionaremos el que necesitamos y pulsaremos en el botón de "Start Sync".
+Después de la configuración, ingresamos a la opción "Sync Users, Leads, Accounts and Contacts" donde podemos seleccionar los grupos de nuestra cuenta Mailrelay que deben ser sincronizados con la cuenta SugarCRM. Seleccionaremos los que necesitamos y pulsaremos en el botón de "Start Sync".
 
-Veremos la siguiente pantalla, que simplemente nos muestra el proceso de sincronización. Nos mostrará el total de usuarios sincronizados.
+Veremos la siguiente pantalla, que simplemente nos muestra el proceso de sincronización. Nos mostrará el total de Users, Leads, Accounts y Contacts sincronizados.
 
-[ NOTA: Dependiendo del número de usuarios a sincronizar, el proceso puede tardar de algunos segundos a varios minutos. ]
+[ NOTA: Dependiendo del número de elementos a sincronizar, el proceso puede tardar de algunos segundos a varios minutos. ]
 
 --------------
 Desinstalación
@@ -69,6 +75,8 @@ Desinstalar la extensión es tan fácil como instalarla. Solo tienes que ir a "M
 Notas adicionales
 -----------------
 - Esta extensión ha sido testeada usando SugarCRM 6.5.16
+
+- Es posible sincronizar Usuarios, Leads, Accounts y Contacts con esta versión del módulo
 
 - Este software se proporciona "TAL CUAL" por los propietarios del copyright, y con ningun garantía expresa o implícita, incluyendo, pero no limitado a,
 las garantías de comercialización y aptitud para un proposito en particular. En ningún caso el propietario del copyright o los colaborados serán responsables

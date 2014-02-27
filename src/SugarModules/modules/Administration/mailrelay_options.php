@@ -9,7 +9,7 @@ $admin_option_defs = array(
 			'index.php?module=Configurator&action=connectionSettings',
 		),
 		'syncUsers' => array(
-			'Users',
+			'Administration',
 			'LBL_MAILRELAY_SYNC',
 			'LBL_MAILRELAY_SYNC_DESC',
 			'index.php?module=Configurator&action=syncUsers',
