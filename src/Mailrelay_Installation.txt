@@ -74,7 +74,7 @@ Uninstalling the extension is as easy as its installation. You just have to go t
 ----------------
 Additional notes
 ----------------
-- This extension has been tested using Prestashop 1.5.4.0
+- This extension has been tested using SugarCRM 6.5.16
 
 - It is possible to sync Users, Leads, Accounts and Contacts with this version of the module.
 
