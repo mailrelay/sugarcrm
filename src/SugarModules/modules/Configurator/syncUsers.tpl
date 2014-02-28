@@ -23,57 +23,40 @@
     <td width="100%">
         <table id="connectionSettingsTable" width="100%" border="0" cellspacing="0" cellpadding="0" class="tabForm">
         <tr>
-            <td align="left" class="dataLabel" width="10%" nowrap="nowrap" valign="top">{$MOD.LBL_MAILRELAY_GROUPSTOSYNC_USERS}</td>
-            <td align="left" class="dataField" width="20%" nowrap="nowrap">
+            <td align="left" class="dataField" width="25%" nowrap="nowrap">
+                {$MOD.LBL_MAILRELAY_GROUPSTOSYNC_USERS}<br /><br />
                 <select id="groups_users" name="groups_users[]" multiple="multiple" size="{$groups|@count}">
                 {foreach key=key item=item from=$groups}
                 <option value="{$item.id}" {if $item.id|in_array:$settings.groups_users}selected="selected"{/if}>{$item.name}</option>
                 {/foreach}
                 </select>
-            </td>
-            <td align="left" class="dataLabel" style="font-size: smaller;">
                 <span id="groups_users_error" class="error" style="display:none;"></span>
             </td>
-        </tr>
-        <tr style="height:15px;"><td></td><td></td></tr>
-        <tr>
-            <td align="left" class="dataLabel" width="10%" nowrap="nowrap" valign="top">{$MOD.LBL_MAILRELAY_GROUPSTOSYNC_LEADS}</td>
-            <td align="left" class="dataField" width="20%" nowrap="nowrap">
+            <td align="left" class="dataField" width="25%" nowrap="nowrap">
+                {$MOD.LBL_MAILRELAY_GROUPSTOSYNC_LEADS}<br /><br />
                 <select id="groups_leads" name="groups_leads[]" multiple="multiple" size="{$groups|@count}">
                 {foreach key=key item=item from=$groups}
                 <option value="{$item.id}" {if $item.id|in_array:$settings.groups_leads}selected="selected"{/if}>{$item.name}</option>
                 {/foreach}
                 </select>
-            </td>
-            <td align="left" class="dataLabel" style="font-size: smaller;">
                 <span id="groups_leads_error" class="error" style="display:none;"></span>
             </td>
-        </tr>
-        <tr style="height:15px;"><td></td><td></td></tr>
-        <tr>
-            <td align="left" class="dataLabel" width="10%" nowrap="nowrap" valign="top">{$MOD.LBL_MAILRELAY_GROUPSTOSYNC_ACCOUNTS}</td>
-            <td align="left" class="dataField" width="20%" nowrap="nowrap">
+            <td align="left" class="dataField" width="25%" nowrap="nowrap">
+                {$MOD.LBL_MAILRELAY_GROUPSTOSYNC_ACCOUNTS}<br /><br />
                 <select id="groups_accounts" name="groups_accounts[]" multiple="multiple" size="{$groups|@count}">
                 {foreach key=key item=item from=$groups}
                 <option value="{$item.id}" {if $item.id|in_array:$settings.groups_accounts}selected="selected"{/if}>{$item.name}</option>
                 {/foreach}
                 </select>
-            </td>
-            <td align="left" class="dataLabel" style="font-size: smaller;">
                 <span id="groups_accounts_error" class="error" style="display:none;"></span>
             </td>
-        </tr>
-        <tr style="height:15px;"><td></td><td></td></tr>
-        <tr>
-            <td align="left" class="dataLabel" width="10%" nowrap="nowrap" valign="top">{$MOD.LBL_MAILRELAY_GROUPSTOSYNC_CONTACTS}</td>
-            <td align="left" class="dataField" width="20%" nowrap="nowrap">
+            <td align="left" class="dataField" width="25%" nowrap="nowrap">
+                {$MOD.LBL_MAILRELAY_GROUPSTOSYNC_CONTACTS}<br /><br />
                 <select id="groups_contacts" name="groups_contacts[]" multiple="multiple" size="{$groups|@count}">
                 {foreach key=key item=item from=$groups}
                 <option value="{$item.id}" {if $item.id|in_array:$settings.groups_contacts}selected="selected"{/if}>{$item.name}</option>
                 {/foreach}
                 </select>
-            </td>
-            <td align="left" class="dataLabel" style="font-size: smaller;">
                 <span id="groups_contacts_error" class="error" style="display:none;"></span>
             </td>
         </tr>
